@@ -1,7 +1,7 @@
 const express = require('express');
 const api = require('./api');
 const bodyParser = require('body-parser');
-const port = 3001;
+const port = process.env.PORT || 8080;
 
 const app = express();
 
@@ -12,11 +12,11 @@ app.use(function (req, res, next) {
 app.use(bodyParser.json());
 app.use('/api', api);
 
-app.listen(port, 'localhost', function (err) {
+app.listen(port, function (err) {
   if (err) {
     console.log(err);
     return;
   }
 
-  console.log('Listening at http://localhost:' + port);
+  console.log('Listening at' + port);
 });
