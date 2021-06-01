@@ -18,5 +18,5 @@ app.listen(port, function (err) {
     return;
   }
 
-  console.log('Listening at localhost' + port);
+  console.log('Listening at' + port);
 });
